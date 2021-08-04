@@ -1,0 +1,21 @@
+{
+    "name": "googlemarketer/contact",
+    "description": "\"This is a contact page submission and email to admin package geneated by team Googlemarketer\"",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Googlemarketer\\Contact\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Rajesh Sharma",
+            "email": "trustrajeshg@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+  "require": {
+    "googlemarketer/contact-package": "0.3.*@dev"
+    }
+}
