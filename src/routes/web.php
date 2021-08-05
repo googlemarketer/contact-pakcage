@@ -23,6 +23,7 @@ Route::group(['namespace' => 'Googlemarketer\Contact\Http\Controllers'], functio
 Route::get('/slider', function(){
     return view('slider');
 });
+
 //adminsetup Route
 Route::get('adminsetup', function(){
     return view('adminsetup');
@@ -32,12 +33,11 @@ Route::get('adminsetup', function(){
 Route::get('associatesetup', function(){
     return view('associatesetup');
 });
+
 //partnersetup Route
 Route::get('partnersetup', function(){
     return view('partnersetup');
 });
-
-
 
 // Member custom dashboard
 //Route::namespace('Member')->prefix('users')->group(function(){
@@ -54,19 +54,6 @@ Route::namespace('Member')->group(function(){
     Route::post('image','ImageController@store');
     Route::get('image/{image}','ImageController@show');
  });
-
-
-//auth routes
-/*  'login'    => true,
-    'logout'   => true,
-    'register' => true,
-    'reset'    => true,   // for resetting passwords
-    'confirm'  => false,  // for additional password confirmations
-    'verify'   => false,  // for email verification */
-
-Auth::routes(['verify' => true]);
-Route::get('/', 'HomeController@index')->name('web.home');
-Route::get('/home', 'HomeController@index');
 
 //Main App Static routes
     Route::get('/about', 'PagesController@about')->name('about');
@@ -121,48 +108,6 @@ Route::namespace('Member')->group(function(){
 Route::get('backend', function(){
     return view('backend');
 })->middleware('auth');
-
-// Vue Programs Testing
-Route::get('vuetesting', function(){
-    return view('vuetesting');
-});
-
-Route::get('skills', function(){
-    return ['laravel','php','Vue','Javascript','MySql'];
-});
-
-//route to send email
-Route::resource('/sendmail', 'SendMailController')->only(['index','store']);
-
-
-
-//Route::resource('users.profile', 'UserProfilesController')->shallow();
-
-// Route::resource('comment','CommentController');
-// Route::resource('community','CommunityController');
-// Route::resource('contact', 'ContactsController');
-// Route::resource('order', 'OrdersController');
-// Route::resource('posts', 'PostsController');
-// Route::resource('profile','ProfileController');
-// Route::resource('property','PropertyController');
-// Route::resource('resume','ResumesController');
-// Route::resource('volunteer','VolunteerController');
-
-
-    //Route::get('/', 'MembersController@index')->name('members');
-    // Route::get('/dashboard', 'MembersController@dashboard')->name('dashboard')->middleware('auth');
-    // Route::get('/member', 'MembersController@member')->name('member');
-
-    // Route::get('posts/{post}/comments/{comment?}', function ($postId, $commentId = null) {
-    //     //
-    // });
-    //Route::get('user/profile', function () {})->name('profile');
-    //Route::get('user/{id}/profile', function ($id) {})->name('profile');
-    //$url = route('profile', ['id' => 1]);
-    // $url = route('profile', ['id' => 1, 'photos' => 'yes']);
-    // Route::resource('posts.comments', 'PostCommentController');
-    // /posts/{post}/comments/{comment}
-    //Route::resource('photos.comments', 'CommentController')->shallow();
 
 
 
