@@ -18,11 +18,10 @@
     "require": {
         },
     "extra": {
-    "laravel": {
-        "providers": [
-            "Googlemarketer\\Contact\\ContactServiceProvider"
-        ]
-
-    }
+        "laravel": {
+            "providers": [
+                "Googlemarketer\\Contact\\ContactServiceProvider"
+            ]
+        }
     }
 }
